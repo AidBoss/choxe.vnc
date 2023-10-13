@@ -1,0 +1,157 @@
+#select_qldh {
+   display: none;
+}
+#select_tdl {
+   display: none;
+}
+#select_dksl {
+   display: none;
+}
+.users_ttnd {
+   color: #f05626;
+   background-color: #ffede7;
+}
+.avata_ttnd {
+   height: 85px;
+}
+.left_container .list-group .list-group-item {
+   height: 40%;
+}
+.avata_user {
+   height: 85px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+.name_user {
+   margin-top: 20px;
+   font-size: 20px;
+   font-weight: bold;
+}
+.avata_user img {
+   clip-path: circle(50px at 50% 50%);
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+}
+.field-list {
+   margin-top: 16px;
+}
+.column {
+   padding: 1px 1.25rem;
+}
+.columns:last-child {
+   margin-bottom: -0.5rem;
+   display: flex;
+}
+.column is-6 {
+   flex: none;
+   width: 50%;
+}
+.select {
+   height: 40px !important;
+}
+select {
+   border-color: #ccc;
+   border-radius: 3px;
+   padding: 0.5rem;
+}
+.select select {
+   width: 25rem;
+}
+.list-services h4 {
+   text-align: center;
+   font-weight: 500;
+   margin: 1.5rem 0px 0.75rem 0px;
+   font-size: 20px;
+   color: #0b0217;
+}
+.list-news h4 {
+   text-align: center;
+   font-weight: 500;
+   margin: 1.5rem 0px 0.75rem 0px;
+   font-size: 17px;
+   color: #ccc;
+}
+.salon-header {
+   background: url(img/salon_header.jpg) no-repeat center;
+   width: 323px;
+   height: 190px;
+   margin: auto;
+}
+.center-text {
+   text-align: center !important;
+}
+.mt-5 {
+   margin-top: 1.5rem !important;
+}
+.salon-sign-in h1 {
+   font-weight: 700;
+   font-size: 20px;
+}
+.small-container {
+   width: 356px;
+   margin: auto;
+}
+.mt4 {
+   margin-top: 1rem !important;
+}
+.list-benefit .benefit-item {
+   background: url(img/check_red_17_12.png) no-repeat top 6px left;
+   padding-left: 29px;
+   font-size: 14px;
+}
+.list-benefit .benefit-item:not(:first-child) {
+   margin-top: 12px;
+   margin-bottom: 15px;
+}
+.benefit-item li {
+   list-style: none;
+}
+.field:not(:last-child) {
+   margin-bottom: 1rem;
+}
+.control-field {
+   box-sizing: border-box;
+   clear: both;
+   font-size: 1rem;
+   position: relative;
+   text-align: inherit;
+}
+.input_cpass {
+   height: 46px !important;
+   width: 100%;
+   padding: 6px 35px 6px 9.5px;
+   border-color: #e4e5e7 !important;
+   border-radius: 4px;
+   border: 1px solid transparent;
+}
+.change-password-container {
+   padding-left: 1.25rem;
+}
+.icon-eye-right {
+   display: flex;
+   position: absolute;
+   right: 10px;
+   bottom: 15px;
+}
+.icon-eye {
+   display: inline-block;
+   background: url(img/eye_20_14.png) no-repeat center;
+   width: 20px;
+   height: 14px;
+}
+.field-control .width-full {
+   background: #f05626;
+   color: #fff;
+   width: 100%;
+   height: 46px;
+   border-color: transparent;
+   border-radius: 4px;
+}
+#name_display {
+   font-weight: bold;
+   color: darkcyan;
+   font-size: 17px;
+   text-align: center;
+}
