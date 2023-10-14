@@ -9,19 +9,26 @@ class loginController extends Controller
 {
     public function showLogin()
     {
-        return view('Home.login');
+        $title = 'Trang đăng nhập';
+        return view('Home.login', compact('title'));
     }
     public function loginPost(Request $request)
     {
+
         $credentials = $request->only('name', 'password');
-        if (Auth::attempt($credentials)) {
-            if (isset($request['remember']) && !empty($request['remember'])) {
-                setcookie('name', $request['remember'], time() + 3600);
-                setcookie('password', $request['remember'], time() + 3600);
+        $remember = $request->has('remember') ? true : false;
+        if (Auth::attempt($credentials, $remember)) {
+            if (isset($remember) && !empty($remember)) {
+                setcookie('name', $request['name'], time() + 3600);
+                setcookie('password', $request['password'], time() + 3600);
             } else {
                 setcookie('name', '');
                 setcookie('password', '');
             }
+            $check = auth()->user()->level;
+            if ($check == '1') {
+                return redirect()->route('showListAcc');
+            };
             return redirect()->route('userIndex');
         }
         return back()->with('fail', 'Tài khoản hoặc mật khẩu sai');

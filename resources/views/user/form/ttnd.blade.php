@@ -1,4 +1,8 @@
     @extends('/layout/h+f')
+    @section('title')
+        {{ $title }}
+    @endsection
+    <title>{{ $title }}</title>
     @section('body_web')
         <div class="container_web_users" style="margin-top:30px;">
             <!------------Địa chỉ dẫn---------->

@@ -1,4 +1,8 @@
 @include('layout.script')
+@section('title')
+    {{ $title }}
+@endsection
+<title>{{ $title }}</title>
 <div class=login_padding>
     <form action="{{ route('regiterPost') }}" method="post" class="login-table">
         @csrf

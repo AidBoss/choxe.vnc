@@ -155,3 +155,54 @@ select {
    font-size: 17px;
    text-align: center;
 }
+.content_header_list_acc p {
+   text-align: center;
+   font: 2em sans-serif;
+   color: chartreuse;
+}
+
+/* css trang admin-listAcc */
+.header_list_acc {
+   margin: 20px auto;
+   height: 10rem;
+   width: 80%;
+}
+.header_admin {
+   height: auto;
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   display: flex;
+   background-color: #f05626;
+   position: relative;
+}
+
+.form_search_user {
+   font-size: 25px;
+   color: red;
+   font-weight: bold;
+   text-align: center;
+   margin: 10px;
+}
+.form_user_acc {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30%;
+   margin: 20px auto;
+}
+#bt_user_acc {
+   margin: 0 10px;
+}
+.content_header_list_acc {
+   height: 30px;
+   margin: auto;
+}
+.more_users_acc {
+   width: 25%;
+   margin: 20px auto;
+}
+.lb_more_users_acc {
+   color: green;
+   font-weight: bold;
+}

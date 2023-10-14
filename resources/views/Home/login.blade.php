@@ -1,4 +1,8 @@
 @include('layout.script')
+@section('title')
+    {{ $title }}
+@endsection
+<title>{{ $title }}</title>
 <div class=login_padding>
     <form action="{{ route('loginPost') }}" method="post" class="login-table">
         @if (session('success'))
@@ -40,8 +44,9 @@
                 <div class="row mb-4">
                     <div class="col d-flex">
                         <div class="form-check">
-                            <input name="remember" type="checkbox" @if (isset($_COOKIE['name'])) checked="" @endif
-                                value="" id="form2Example31" checked />
+                            <input type="checkbox" name="remember"
+                                @if (isset($_COOKIE['name'])) value="{{ $_COOKIE['name'] }}" checked="" @endif
+                                id="form2Example31" />
                             <label class="form-check-label" for="form2Example31">
                                 Lưu mật khẩu
                             </label>
