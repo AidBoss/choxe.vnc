@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2023 at 07:57 PM
+-- Generation Time: Oct 14, 2023 at 07:40 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -101,7 +101,7 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `phone` int(11) NOT NULL DEFAULT 0,
   `level` tinyint(4) NOT NULL DEFAULT 0,
   `status` tinyint(4) NOT NULL DEFAULT 0,
@@ -115,9 +115,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `phone`, `level`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin01', 'admin01@gmail.com', NULL, '$2y$10$pNRMwlBRq8GRuW2F55ADxO0/Pw5KoK/JamoRN36ZnaSPosRHlO.qu', 393866527, 0, 0, NULL, '2023-10-13 09:14:05', '2023-10-13 09:14:05'),
+(1, 'admin01', 'admin01@gmail.com', NULL, '$2y$10$pNRMwlBRq8GRuW2F55ADxO0/Pw5KoK/JamoRN36ZnaSPosRHlO.qu', 393866527, 1, 0, 'Kmscne0APuFOQ5NDT7iN84ZdQ2cX7XzKZRM7tlLdfzauCabWv68Z0LuzjC7z', '2023-10-13 09:14:05', '2023-10-13 09:14:05'),
 (2, 'user01', 'userwibu@gmail.com', NULL, '$2y$10$xpqLiEXEaaD76Hha6jhlN.II8oSkM8XwxnOqJCvS1baqyRD6LXtUG', 1234567890, 0, 0, NULL, '2023-10-13 09:32:03', '2023-10-13 09:32:03'),
-(3, 'huywibu', 'Huy02@gmail.com', NULL, '$2y$10$X2wIa5CKd.Wq7bRoH9I/w..CsSzyaZ6WTNkA68Ps8Z12tDra//BiO', 1234567890, 0, 0, NULL, '2023-10-13 16:37:19', '2023-10-13 16:37:19');
+(3, 'huywibu', 'Huy02@gmail.com', NULL, '$2y$10$X2wIa5CKd.Wq7bRoH9I/w..CsSzyaZ6WTNkA68Ps8Z12tDra//BiO', 1234567890, 0, 0, 'pK9nggYi8lsGNcOqt8HgH82xr9Iv6yIGYMwIaU3BkKxQcVlzX2BjhFeeGJzc', '2023-10-13 16:37:19', '2023-10-13 16:37:19');
 
 --
 -- Indexes for dumped tables
@@ -183,7 +183,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
