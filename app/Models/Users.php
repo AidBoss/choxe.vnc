@@ -19,7 +19,7 @@ class Users extends Model
     // GÁN THÊM MỚI DỮ LIỆU VÀO BẢNG
     public function addUsers($data)
     {
-        return DB::insert('INSERT into users (name,email,phone,created_at) values (?, ?,?,?)', $data);
+        return DB::insert('INSERT into users (name,email,phone,password,created_at) values (?, ?,?,?,?)', $data);
     }
     // TÌM KIẾM THEO ID TRONG DATABASE
     public function getIdUser($id)
@@ -30,7 +30,7 @@ class Users extends Model
     public function updateUsers($data, $id)
     {
         $data[] = $id;
-        return DB::update('UPDATE ' . $this->table . ' SET name = ?, email = ?,phone = ?, updated_at = ? where id = ?', $data);
+        return DB::update('UPDATE ' . $this->table . ' SET name = ?, email = ?,phone = ?,password = ?, updated_at = ? where id = ?', $data);
     }
 
     // XÓA NGƯỜI DÙNG

@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\homeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\regiterController;
 use App\Http\Controllers\userController;
-use App\Http\Middleware\checkLoginMiddleware;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 Route::prefix('Home')->group(function () {
     // show display
-    Route::get('/', [homeController::class, 'showHome'])->name('showHome');
+    Route::get('/', [AdminController::class, 'showHome'])->name('showHome');
     Route::get('/login', [LoginController::class, 'showLogin'])->name('showLogin');
     Route::get('/sign', [regiterController::class, 'showRegister'])->name('showRegister');
     // function get data from form
@@ -34,25 +34,25 @@ Route::prefix('Home')->group(function () {
 Route::prefix('admin')->middleware('adminCheck')->group(function () {
 
     // show hiển thị khi vào trang admin
-    Route::get('/', [homeController::class, 'showAdmin']);
-    Route::get('/listAcc', [homeController::class, 'showAdmin'])->name('showListAcc');
+    Route::get('/', [AdminController::class, 'showAdmin']);
+    Route::get('/danh-sach-user', [AdminController::class, 'showAdmin'])->name('showListAcc');
 
     //Thêm một tài khoản user vào database
-    Route::get('/addUsers', [homeController::class, 'addUsers'])->name('addUsers');
-    Route::post('/addUsers', [homeController::class, 'editUsersPost'])->name('editUsersPost');
+    Route::get('/them-moi-user', [AdminController::class, 'addUsers'])->name('addUsers');
+    Route::post('/them-moi-user', [AdminController::class, 'addUsersPost'])->name('addUsersPost');
 
     // sửa tài khoản 
-    Route::get('/edit/{id}', [homeController::class, 'editUsers'])->name('editUsers');
-    Route::post('/update', [homeController::class, 'editUsersPost'])->name('editUsersPost');
+    Route::get('/edit/{id}', [AdminController::class, 'editUsers'])->name('editUsers');
+    Route::post('/update', [AdminController::class, 'editUsersPost'])->name('editUsersPost');
 
     // XÓA TÀI KHOẢN
-    Route::get('/delete/{id}', [homeController::class, 'deleteUsers'])->name('deleteUsers');
+    Route::get('/delete/{id}', [AdminController::class, 'deleteUsers'])->name('deleteUsers');
 
     // show hiển thị trang danh sách bài viết mới
-    Route::get('/listNews', [homeController::class, 'showListNews'])->name('showListNews');
+    Route::get('/listNews', [AdminController::class, 'showListNews'])->name('showListNews');
 
     // show hiển thị trang danh sách sản phẩm
-    Route::get('/listProduct', [homeController::class, 'showListProduct'])->name('showListProduct');
+    Route::get('/listProduct', [ProductsController::class, 'showListProducts'])->name('showListProducts');
 
     // đăng xuất tài khoản
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
