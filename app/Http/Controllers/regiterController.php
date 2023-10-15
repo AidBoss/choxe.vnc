@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use App\Http\Requests\UserRequest;
 
 class regiterController extends Controller
 {
@@ -13,14 +13,8 @@ class regiterController extends Controller
         $title = 'Trang đăng ký';
         return view('Home.sign', compact('title'));
     }
-    public function regiterPost(Request $request)
+    public function regiterPost(UserRequest $request)
     {
-        $request->validate([
-            'name' => 'required|min:6|max:255',
-            'phone' => 'required|numeric|digits:10',
-            'email' => 'required|email',
-            'password' => 'required|min:6|max:255',
-        ]);
         $user = new User();
         $user->name = $request->name;
         $user->phone = $request->phone;

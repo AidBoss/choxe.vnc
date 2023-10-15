@@ -17,7 +17,7 @@
                     <label class="form-label" id="lb_tkmk" for="form2Example2">
                         Tài khoản
                     </label>
-                    <input value="{{ old('name') }}" type="text" id="ip_tkmk" name="name"
+                    <input required value="{{ old('name') }}" type="text" id="ip_tkmk" name="name"
                         class="form-control2" />
                     @if ($errors->has('name'))
                         <div class="error">{{ $errors->first('name') }}</div>
@@ -27,7 +27,7 @@
                     <label class="form-label" id="lb_tkmk" for="form2Example2">
                         Số điện thoại
                     </label>
-                    <input value="{{ old('phone') }}" type="text" id="ip_tkmk" name="phone"
+                    <input required value="{{ old('phone') }}" type="text" id="ip_tkmk" name="phone"
                         class="form-control2" />
                     @if ($errors->has('phone'))
                         <div class="error">{{ $errors->first('phone') }}</div>
@@ -37,7 +37,7 @@
                     <label class="form-label" id="lb_tkmk" for="form2Example2">
                         Email
                     </label>
-                    <input value="{{ old('email') }}" type="email" id="ip_tkmk" name="email"
+                    <input required value="{{ old('email') }}" type="email" id="ip_tkmk" name="email"
                         class="form-control2" />
                     @if ($errors->has('email'))
                         <div class="error">{{ $errors->first('email') }}</div>
@@ -47,10 +47,10 @@
                     <label class="form-label" id="lb_tkmk" for="form2Example2">
                         Mật khẩu
                     </label>
-                    <input value="{{ old('password') }}" type="password" id="ip_tkmk" name="password"
+                    <input required value="{{ old('password') }}" type="password" id="ip_tkmk" name="password"
                         class="form-control2" />
                     @if ($errors->has('password'))
-                        <div class="error">{{ $errors->first('pass') }}</div>
+                        <div class="error">{{ $errors->first('password') }}</div>
                     @endif
                 </div>
             </div>

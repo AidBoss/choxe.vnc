@@ -43,12 +43,17 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Phone Number</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">created_at</th>
-                                            <th scope="col">Edit</th>
-                                            <th scope="col">Del</th>
+                                            <th scope="col">Tên</th>
+                                            <th scope="col">Giá</th>
+                                            <th scope="col">Hãng</th>
+                                            <th scope="col">Năm sx</th>
+                                            <th scope="col">Số chỗ</th>
+                                            <th scope="col">Nhiên liệu</th>
+                                            <th scope="col">Số liên hệ</th>
+                                            <th scope="col">Tên liên hệ</th>
+                                            <th scope="col">Địa chỉ</th>
+                                            <th scope="col">Sửa</th>
+                                            <th scope="col">Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -59,6 +64,11 @@
                                                     <td>{{ $item->name }}</td>
                                                     <td>{{ $item->phone }}</td>
                                                     <td>{{ $item->email }}</td>
+                                                    <td>{{ $item->name }}</td>
+                                                    <td>{{ $item->phone }}</td>
+                                                    <td>{{ $item->email }}</td>
+                                                    <td>{{ $item->name }}</td>
+                                                    <td>{{ $item->phone }}</td>
                                                     <td>{{ $item->created_at }}</td>
                                                     <td><a href="{{ route('editUsers', ['id' => $item->id]) }}"><button
                                                                 type="button" class="btn btn-warning">Edit</button></a>
@@ -71,7 +81,7 @@
                                         @else
                                             <tr>
                                                 <th scope="row"></th>
-                                                <td colspan="7">Không Sản Phẩm Nào !</td>
+                                                <td colspan="12">Không Sản Phẩm Nào !</td>
                                             </tr>
                                         @endif
                                     </tbody>

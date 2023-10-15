@@ -13,20 +13,22 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('category');
+            $table->string('ten');
+            $table->string('loai');
             $table->string('category_id');
-            $table->integer('price');
-            $table->string('painted');
-            $table->string('company');
-            $table->string('yom');
+            $table->integer('gia');
+            $table->string('mota');
+            $table->string('hang');
+            $table->string('namsx');
             $table->string('kmdadi');
             $table->string('nhienlieu');
-            $table->string('fuel');
-            $table->string('origin');
-            $table->string('designs');
-            $table->string('TenLienHe');
-            $table->integer('phone')->default(0);
+            $table->string('xuatxu');
+            $table->string('kieudang');
+            $table->string('socho');
+            $table->string('chuxe');
+            $table->string('diachi');
+            $table->string('list_anh');
+            $table->integer('sochuxe')->default(0);
             $table->timestamps();
         });
     }

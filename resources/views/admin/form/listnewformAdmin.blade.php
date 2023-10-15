@@ -46,6 +46,7 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Phone Number</th>
                                             <th scope="col">Email</th>
+                                            <th scope="col">Status</th>
                                             <th scope="col">created_at</th>
                                             <th scope="col">Edit</th>
                                             <th scope="col">Del</th>
@@ -59,6 +60,9 @@
                                                     <td>{{ $item->name }}</td>
                                                     <td>{{ $item->phone }}</td>
                                                     <td>{{ $item->email }}</td>
+                                                    <td>{!! $item->status == 0
+                                                        ? '<button class="btn btn-danger">Chưa kích hoạt</button>'
+                                                        : '<button class="btn btn-success">Đã kích hoạt</button>' !!}</td>
                                                     <td>{{ $item->created_at }}</td>
                                                     <td><a href="{{ route('editUsers', ['id' => $item->id]) }}"><button
                                                                 type="button" class="btn btn-warning">Edit</button></a>
