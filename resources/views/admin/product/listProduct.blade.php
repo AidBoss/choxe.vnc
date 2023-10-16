@@ -46,9 +46,10 @@
                                             <th scope="col">Tên</th>
                                             <th scope="col">Giá</th>
                                             <th scope="col">Hãng</th>
+                                            <th scope="col">Dòng xe</th>
                                             <th scope="col">Năm sx</th>
                                             <th scope="col">Số chỗ</th>
-                                            <th scope="col">Nhiên liệu</th>
+                                            <th scope="col">Ảnh xe</th>
                                             <th scope="col">Số liên hệ</th>
                                             <th scope="col">Tên liên hệ</th>
                                             <th scope="col">Địa chỉ</th>
@@ -57,19 +58,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if (!empty($usersList))
-                                            @foreach ($usersList as $key => $item)
+                                        @if (!empty($listProducts))
+                                            @foreach ($listProducts as $key => $item)
                                                 <tr>
                                                     <th scope="row">{{ $key + 1 }}</td>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td>{{ $item->phone }}</td>
-                                                    <td>{{ $item->email }}</td>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td>{{ $item->phone }}</td>
-                                                    <td>{{ $item->email }}</td>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td>{{ $item->phone }}</td>
-                                                    <td>{{ $item->created_at }}</td>
+                                                    <td>{{ $item->ten }}</td>
+                                                    <td>{{ $item->gia }}</td>
+                                                    <td>{{ $item->hang }}</td>
+                                                    <td>{{ $item->dongxe }}</td>
+                                                    <td>{{ $item->namsx }}</td>
+                                                    <td>{{ $item->socho }}</td>
+                                                    <td>{{ $item->anh }}</td>
+                                                    <td>{{ $item->sochuxe }}</td>
+                                                    <td>{{ $item->chuxe }}</td>
+                                                    <td>{{ $item->diachi }}</td>
                                                     <td><a href="{{ route('editUsers', ['id' => $item->id]) }}"><button
                                                                 type="button" class="btn btn-warning">Edit</button></a>
                                                     </td>

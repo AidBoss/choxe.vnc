@@ -13,7 +13,7 @@ class Products extends Model
     //LẤY DANH SÁCH SẢN PHẨM
     public function getAllProducts()
     {
-        $users = DB::select('SELECT * FROM users ORDER BY created_at DESC');
+        $users = DB::select('SELECT * FROM products ORDER BY created_at DESC');
         return $users;
     }
 
