@@ -66,11 +66,10 @@
                                         <div class="form-group col-md-6">
                                             <label for="inputAddress">Ảnh xe</label>
                                             <div class="custom-file">
-                                                <input name="list_anh" type="file" class="custom-file-input"
-                                                    id="inputGroupFile02">
-                                                <label class="custom-file-label" for="inputGroupFile02">Chọn ảnh</label>
-                                                @error('list_anh')
-                                                    <span class="error">{{ $errors->first('list_anh') }}</span>
+                                                <label  for="inputGroupFile02"></label>
+                                                <input type="file" name="anh" >
+                                                @error('anh')
+                                                    <span class="error">{{ $errors->first('anh') }}</span>
                                                 @enderror
                                             </div>
                                         </div>
@@ -99,7 +98,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputState">Năm sản xuất</label>
-                                            <input name="namsx" type="date" class="form-control" id="inputZip">
+                                            <input name="namsx" type="month" class="form-control" id="inputZip">
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -155,6 +154,7 @@
                                         </div>
                                     </div>
                                     <button name="submit" type="submit" class="btn btn-success">Thêm Sản Phẩm</button>
+                                    <a href="{{route('showListProducts')}}" class="btn btn-warning">Trở lại</a>
                                 </form>
                             </div>
                         </div>

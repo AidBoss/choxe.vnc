@@ -63,11 +63,11 @@
                                                     <td>{{ $item->hang }}</td>
                                                     <td>{{ $item->namsx }}</td>
                                                     <td>{{ $item->socho }}</td>
-                                                    <td>{{ $item->anh }}</td>
+                                                    <td><img src="{{ asset('anh/'.$item->anh) }}" alt="anhxe"></td>
                                                     <td>{{ $item->sochuxe }}</td>
                                                     <td>{{ $item->chuxe }}</td>
                                                     <td>{{ $item->diachi }}</td>
-                                                    <td><a href="{{ route('editUsers', ['id' => $item->id]) }}"><button
+                                                    <td><a href="{{ route('editProducts', ['id' => $item->id]) }}"><button
                                                                 type="button" class="btn btn-warning">Edit</button></a>
                                                     </td>
                                                     <td><a onclick="return confirm('Bạn chắc chắn muốn xóa')"

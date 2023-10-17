@@ -18,7 +18,7 @@ class Products extends Model
         ->leftJoin('category','products.category_id','=','category.id')
         ->orderBy('created_at','DESC')
         ->get();
-        return $products;
+        return $products; 
     }
     //THÊM MỚI SẢN PHẨM
     public function addProducts($data)
@@ -30,7 +30,31 @@ class Products extends Model
     // TÌM KIẾM THEO ID TRONG DATABASE
     public function getIdProducts($id)
     {
+        
         return DB::select('SELECT * FROM ' . $this->table . ' where id = ?', [$id]);
+    }
+     // LẤY VÀ GÁN GIÁ TRỊ MỚI PHẦN UPDATE
+    public function updateProducts($data, $id)
+    {
+        $data[] = $id;
+        return DB::update('UPDATE ' . $this->table . ' 
+            SET ten = ?,
+            category_id = ?,
+            gia = ?,
+            nhienlieu = ?,
+            anh = ?,
+            mota = ?,
+            kmdadi = ?,
+            hopso = ?,
+            xuatxu = ?,
+            namsx = ?,
+            socho = ?,
+            chuxe = ?,
+            sochuxe = ?,
+            diachi = ?
+            where id = ?', 
+            $data );
+            
     }
     // XÓA NGƯỜI DÙNG
     public function deleteProducts($id)
