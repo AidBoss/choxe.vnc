@@ -59,7 +59,6 @@
                                             <span class="error">{{ $errors->first('email') }}</span>
                                         @enderror
                                     </div>
-
                                     <div class="form-group col-md-12">
                                         <label for="phone">Số điện thoại</label>
                                         <input value="{{ old('phone') }}" name='phone' type="text"

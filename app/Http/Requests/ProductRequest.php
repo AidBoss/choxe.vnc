@@ -22,15 +22,15 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'ten' => 'required|min:5|max:255|',
-            'gia' => 'required|numeric',
-            'list_anh' => 'required|min:5|max:255|',
-            'hang' => 'required|',
-            'xuatxu' => 'required|',
-            'nhienlieu' => 'required|min:5|max:255|',
-            'diachi' => 'required',
-            'sochuxe' => 'required|numeric',
-            'chuxe' => 'required|min:5|max:255| ',
+            // 'ten' => 'required|min:2|max:255|',
+            // 'gia' => 'required|',
+            // 'list_anh' => 'required|', 
+            // 'category_id' => 'required|',
+            // // 'xuatxu' => 'required|',
+            // 'nhienlieu' => 'required|min:5|max:255|',
+            // 'diachi' => 'required',
+            // 'sochuxe' => 'required|min:10',
+            // 'chuxe' => 'required|min:2|max:255| ',
         ];
     }
     public function messages(): array
@@ -39,7 +39,7 @@ class ProductRequest extends FormRequest
             'name.required' => 'Tên xe không được để trống ',
             'gia.required' => 'Giá không được để trống ',
             'list_anh.required' => 'Ảnh không được để trống ',
-            'hang.required' => 'Hãng không được để trống ',
+            'category_id.required' => 'Hãng không được để trống ',
             'xuatxu.required' => 'Xuất xứ không được để trống ',
             'nhienlieu.required' => 'Nhiên liệu  không được để trống ',
             'diachi.required' => 'Địa chỉ không được để trống ',

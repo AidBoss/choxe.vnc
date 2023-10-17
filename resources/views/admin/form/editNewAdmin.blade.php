@@ -9,12 +9,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h4 class="m-0">Thêm người dùng mới</h4>
+                        <h4 class="m-0">Chỉnh Sửa tài khoản người dùng</h4>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Add New Users</li>
+                            <li class="breadcrumb-item active">Add edit account Users</li>
                         </ol>
                     </div>
                 </div>

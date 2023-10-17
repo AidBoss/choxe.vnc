@@ -19,7 +19,8 @@ class Users extends Model
     // GÁN THÊM MỚI DỮ LIỆU VÀO BẢNG
     public function addUsers($data)
     {
-        return DB::insert('INSERT into users (name,email,phone,password,created_at) values (?, ?,?,?,?)', $data);
+        return DB::insert('INSERT into users (name,email,phone,password,created_at) 
+        values (?, ?,?,?,?)', $data);
     }
     // TÌM KIẾM THEO ID TRONG DATABASE
     public function getIdUser($id)

@@ -14,14 +14,19 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('ten');
-            $table->string('loai');
-            $table->string('category_id');
+            $table->int('category_id');
             $table->string('gia');
-            $table->string('hang');
             $table->string('nhienlieu');
+            $table->string('anh');
+            $table->string('mota');
             $table->string('kmdadi');
+            $table->string('hopso');
             $table->string('xuatxu');
             $table->string('namsx');
+            $table->string('socho');
+            $table->string('chuxe');
+            $table->string('sochuxe');
+            $table->string('diachi');
             $table->timestamps();
         });
     }

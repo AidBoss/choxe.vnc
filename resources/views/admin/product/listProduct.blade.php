@@ -4,7 +4,6 @@
 @endsection
 @section('body_new')
     <div class="content-wrapper">
-
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -20,8 +19,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -46,7 +43,6 @@
                                             <th scope="col">Tên</th>
                                             <th scope="col">Giá</th>
                                             <th scope="col">Hãng</th>
-                                            <th scope="col">Dòng xe</th>
                                             <th scope="col">Năm sx</th>
                                             <th scope="col">Số chỗ</th>
                                             <th scope="col">Ảnh xe</th>
@@ -65,7 +61,6 @@
                                                     <td>{{ $item->ten }}</td>
                                                     <td>{{ $item->gia }}</td>
                                                     <td>{{ $item->hang }}</td>
-                                                    <td>{{ $item->dongxe }}</td>
                                                     <td>{{ $item->namsx }}</td>
                                                     <td>{{ $item->socho }}</td>
                                                     <td>{{ $item->anh }}</td>
@@ -76,7 +71,7 @@
                                                                 type="button" class="btn btn-warning">Edit</button></a>
                                                     </td>
                                                     <td><a onclick="return confirm('Bạn chắc chắn muốn xóa')"
-                                                            href="{{ route('deleteUsers', ['id' => $item->id]) }}"><button
+                                                            href="{{ route('deleteProsucts', ['id' => $item->id]) }}"><button
                                                                 type="button" class="btn btn-danger">Del</button></a></td>
                                                 </tr>
                                             @endforeach
@@ -91,12 +86,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 @endsection

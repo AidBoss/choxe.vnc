@@ -64,7 +64,9 @@ Route::prefix('admin')->middleware('adminCheck')->group(function () {
 
         // show thêm mới sản phẩm
         Route::get('/addProducts', [ProductsController::class, 'showAddProducts'])->name('showAddProducts');
-        Route::get('/addProductsPost', [ProductsController::class, 'addProductsPost'])->name('addProductsPost');
+        Route::post('/addProductsPost', [ProductsController::class, 'addProductsPost'])->name('addProductsPost');
+        // Xóa sản phẩm
+        Route::get('/delete/{id}', [ProductsController::class, 'deleteProsucts'])->name('deleteProsucts');
     });
     // show hiển thị trang danh sách bài viết mới
     Route::get('/listNews', [AdminController::class, 'showListNews'])->name('showListNews');
