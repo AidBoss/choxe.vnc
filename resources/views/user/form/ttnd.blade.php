@@ -25,8 +25,12 @@
                 <div class="left_container">
                     <ul class="list-group">
                         <li class="list-group-item disabled">Giới thiệu</li>
-                        <li class="list-group-item">
-                            <p id="name_display">{{ Auth::user()->name }}</p>
+                        <li class="list-group-item " id="avata-users">
+                            <div class="render_avata">
+                                <img id="img-avata" class="rounded-circle mb-3" src="{{ asset('font/img-avata/'.Auth::user()->image) }}" alt="">
+                            </div>
+                            <h5 class="mb-2"><strong>{{ Auth::user()->name }}</strong></h5>
+                            {{-- <p id="name_display">{{ Auth::user()->name }}</p> --}}
                         </li>
                         <li class="list-group-item" id="users_ttnd"><i style="font-size:22px"
                                 class=" fa-regular fa-circle-user"></i>ㅤThông
@@ -53,47 +57,59 @@
                         <li class="list-group-item "><a id="link_users" href="{{ url('user/logout') }}"><i
                                     style="font-size:22px" class="fa-solid fa-arrow-right-from-bracket"></i>ㅤĐăng
                                 xuất</a></li>
-                        <!-- <li class="list-group-item">Vestibulum at eros</li>  -->
                     </ul>
                 </div>
 
                 <div class="right_container">
                     <ul class="list-group">
                         <!-- html của thông tin đăng nhập -->
-                        <!-- html của thông tin đăng nhập -->
                         <div class="content_info_login">
                             <li class="list-group-item disabled">Thông tin đăng nhập </li>
-                            <li class="list-group-item">
-                                <div class="render-avatar">
-                                </div>
-                                <input type="file" name="txtfile" id="list-group-item-upfile" class="up-file-pic">
-                            </li>
-                            <li class="list-group-item">
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" id="lb_tkmk" for="form2Example2">Số
-                                        điện
-                                        thoại</label>
-                                    <input type="text" value="{{ Auth::user()->phone }}" id="ip_tkmk"
-                                        class="form-control" />
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" id="lb_tkmk" for="form2Example2"> Tên tài khoản</label>
-                                    <input type="text" value="{{ Auth::user()->name }}" id="ip_tkmk"
-                                        class="form-control" />
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" id="lb_tkmk" for="form2Example2">Email</label>
-                                    <input type="text" value="{{ Auth::user()->email }}" id="ip_tkmk"
-                                        class="form-control" />
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <button type="submit" class="sub-users" id="sub-web-users">Cập nhập</button>
-                            </li>
+                            <form action="{{route('editUsersNmPost')}}" method="post" enctype="multipart/form-data">
+                                @if (session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            Dữ liệu nhập không hợp lệ.
+                                        </div>
+                                    @endif
+                                    @csrf
+                                <li class="list-group-item">
+                                    <div class="form-outline mb-4">
+                                        <input type="file" hidden name="image" id="inputGroupFile02">
+                                        <label class="input-group-text" for="inputGroupFile02">Upload anh dai dien</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" id="lb_tkmk" for="form2Example2">Số
+                                            điện
+                                            thoại</label>
+                                        <input type="text" name="phone" value="{{ Auth::user()->phone }}" id="ip_tkmk"
+                                            class="form-control" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" id="lb_tkmk" for="form2Example2"> Tên tài khoản</label>
+                                        <input type="text" name="name" value="{{ Auth::user()->name }}" id="ip_tkmk"
+                                            class="form-control" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" id="lb_tkmk" for="form2Example2">Email</label>
+                                        <input type="text" name="email" value="{{ Auth::user()->email }}" id="ip_tkmk"
+                                            class="form-control" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <button type="submit" class="sub-users" id="sub-web-users">Cập nhập</button>
+                                </li>
+                            </form>
                         </div>
                     </ul>
                 </div>

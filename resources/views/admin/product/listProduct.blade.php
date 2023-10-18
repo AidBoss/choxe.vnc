@@ -25,14 +25,18 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header border-0">
-                                <h3 class="card-title">List Users</h3>
+                                <h3 class="card-title">List Product</h3>
                                 <div class="card-tools">
-                                    <a href="#" class="btn btn-tool btn-sm">
-                                        <i class="fas fa-download"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-tool btn-sm">
-                                        <i class="fas fa-bars"></i>
-                                    </a>
+                                    <form action="{{route('showListProducts')}}" method="get" class="mb-2">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <input type="search" class="form-control" name="search" value="{{request()->search}}" placeholder="Nhập Tìm Kiếm....">
+                                            </div>
+                                            <div class="col-4">
+                                                <button type="submit"  class="btn btn-info" name="" id=""> Tìm kiếm</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="card-body table-responsive p-0">
@@ -40,14 +44,14 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Tên</th>
-                                            <th scope="col">Giá</th>
+                                            <th scope="col"><a href="?sortBy=ten&sortType={{$sortType}}" id="loc_table">Tên &#8645;</a></th>
+                                            <th scope="col"><a href="?sortBy=gia&sortType={{$sortType}}" id="loc_table">Giá &#8645;</a></th>
                                             <th scope="col">Hãng</th>
-                                            <th scope="col">Năm sx</th>
-                                            <th scope="col">Số chỗ</th>
+                                            <th scope="col"><a href="?sortBy=namsx&sortType={{$sortType}}" id="loc_table">Năm sx &#8645;</a></th>
+                                            <th scope="col"><a href="?sortBy=socho&sortType={{$sortType}}" id="loc_table">Số chỗ &#8645;</a></th>
                                             <th scope="col">Ảnh xe</th>
                                             <th scope="col">Số liên hệ</th>
-                                            <th scope="col">Tên liên hệ</th>
+                                            <th scope="col"><a href="?sortBy=chuxe&sortType={{$sortType}}" id="loc_table">Tên liên hệ &#8645;</a></th>
                                             <th scope="col">Địa chỉ</th>
                                             <th scope="col">Sửa</th>
                                             <th scope="col">Xóa</th>

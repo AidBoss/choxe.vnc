@@ -20,11 +20,33 @@ class ProductsController extends Controller
         $this->Category = new Category();
     }
     //HIỂN THỊ DANH SÁCH SẢN PHẨM
-    public function showListProducts()
+    public function showListProducts(Request $request)
     {
         $title = 'Danh sách sản phẩm';
-        $listProducts = $this->Products->getAllProducts();
-        return view('admin.product.listProduct', compact('title', 'listProducts'));
+        $search ='';
+        //tìm kiếm bằng search
+        if(!empty($request->search)){
+            $search = $request->search;
+        }
+        // sắp xếp khi nhấn: 
+        $sortType = $request->input('sortType');
+        $sortBy = $request->input('sortBy');
+        $allowSort = ['ASC','DESC'] ;
+            if(!empty($sortBy)&&in_array($sortType,$allowSort)){
+                if($sortType == 'DESC'){
+                    $sortType = 'ASC';
+                }else{
+                    $sortType = 'DESC';
+                }
+            }else{
+                $sortType = 'ASC';
+            }
+        $sortArr = [
+            'sortBy'=> $sortBy,
+            'sortType'=> $sortType,
+        ];
+        $listProducts = $this->Products->getAllProducts($search,$sortArr);
+        return view('admin.product.listProduct', compact('title', 'listProducts','sortType'));
     }
     //HIỂN THỊ THÊM MỚI SẢN PHẨM
     public function showAddProducts()

@@ -64,4 +64,9 @@ class Users extends Model
     {
         return DB::table('users')->where('id', $id)->delete();
     }
+    // public function updateUserNm($data,$id)
+    // {
+    //     $data[] = $id;
+    //     return DB::update('UPDATE ' . $this->table . ' SET name = ?, email = ?,phone = ?,image = ?, updated_at = ? where id = ?', $data);
+    // }
 }

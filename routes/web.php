@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\regiterController;
-use App\Http\Controllers\userController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductsController;
 
 /*
@@ -52,8 +52,6 @@ Route::prefix('admin')->middleware('adminCheck')->group(function () {
 
         // XÓA TÀI KHOẢN
         Route::get('/delete/{id}', [AdminController::class, 'deleteUsers'])->name('deleteUsers');
-        // đăng xuất tài khoản
-        Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     });
 
     // ROUTER LIÊN QUAN ĐẾN SẢN PHẨM
@@ -72,14 +70,26 @@ Route::prefix('admin')->middleware('adminCheck')->group(function () {
         
         // Xóa sản phẩm
         Route::get('/delete/{id}', [ProductsController::class, 'deleteProsucts'])->name('deleteProsucts');
+        // Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     });
     // show hiển thị trang danh sách bài viết mới
     Route::get('/listNews', [AdminController::class, 'showListNews'])->name('showListNews');
+     // đăng xuất tài khoản
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 
 Route::prefix('user')->middleware('checkLogin')->group(function () {
-    // show hiển thị khi vào trang User
-    Route::get('/', [userController::class, 'showListUser'])->name('userIndex');
+
+    Route::prefix('/account')->group(function () {
+        // show hiển thị khi vào trang User
+    Route::get('/', [UserController::class, 'showListUser'])->name('userIndex');
+    // sửa tài khoản 
+        // Route::get('/edit/{id}', [UserController::class, 'editUsers'])->name('editUsers');
+        Route::post('/update', [UserController::class, 'editUsersNmPost'])->name('editUsersNmPost');
+    });
+    Route::prefix('/product')->group(function () {
+    
+    });
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
