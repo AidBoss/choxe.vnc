@@ -30,12 +30,32 @@
                             <div class="card-header border-0">
                                 <h3 class="card-title">List Users</h3>
                                 <div class="card-tools">
-                                    <a href="#" class="btn btn-tool btn-sm">
-                                        <i class="fas fa-download"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-tool btn-sm">
-                                        <i class="fas fa-bars"></i>
-                                    </a>
+                                    <form action="{{route('showListAcc')}}" method="get" class="mb-2">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <select class="form-control" id="" name="status">
+                                                    <option value="0">Tất cả trạng thái</option>
+                                                    <option value="active" {{request()->status=='1'?'selected':false}}
+                                                    >Kích hoạt</option>
+                                                    <option value="inactive" {{request()->status=='0'?'selected':false}}
+                                                        >Chưa kích hoạt</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-3">
+                                                <select class="form-control" id="" name="level">
+                                                    <option value="0">Tất cả quyền</option>
+                                                    <option value="Admin" {{request()->level=='1'?'selected':false}}>Admin</option>
+                                                    <option value="Users" {{request()->level=='0'?'selected':false}}>Users</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="search" class="form-control" name="search" value="{{request()->search}}" placeholder="Nhập Tìm Kiếm">
+                                            </div>
+                                            <div class="col-2">
+                                                <button type="submit"  class="btn btn-info" name="" id=""> Tìm kiếm</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="card-body table-responsive p-0">
@@ -43,11 +63,12 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Phone Number</th>
-                                            <th scope="col">Email</th>
+                                            <th scope="col"><a href="?sortBy=name&sortType={{$sortType}}" id="loc_table">Name &#8645;</a></th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col"><a href="?sortBy=email&sortType={{$sortType}}" id="loc_table">Email &#8645;</th>
+                                            <th scope="col">Level</th>
                                             <th scope="col">Status</th>
-                                            <th scope="col">created_at</th>
+                                            <th scope="col"><a href="?sortBy=created_at&sortType={{$sortType}}" id="loc_table">Create-at &#8645;</th>
                                             <th scope="col">Edit</th>
                                             <th scope="col">Del</th>
                                         </tr>
@@ -60,6 +81,9 @@
                                                     <td>{{ $item->name }}</td>
                                                     <td>{{ $item->phone }}</td>
                                                     <td>{{ $item->email }}</td>
+                                                    <td>{!! $item->level == 0
+                                                        ? 'users'
+                                                        : 'Admin' !!}</td>
                                                     <td>{!! $item->status == 0
                                                         ? '<button class="btn btn-danger">Chưa kích hoạt</button>'
                                                         : '<button class="btn btn-success">Đã kích hoạt</button>' !!}</td>

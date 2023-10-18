@@ -63,7 +63,8 @@
                                                     <td>{{ $item->hang }}</td>
                                                     <td>{{ $item->namsx }}</td>
                                                     <td>{{ $item->socho }}</td>
-                                                    <td><img src="{{ asset('anh/'.$item->anh) }}" alt="anhxe"></td>
+                                                    <td style="width: 150px"><img style="object-fit: cover; width: 100%;
+                                                    height:50%" src="{{ asset('font/img-product/'.$item->anh) }}" alt="anhxe"></td>
                                                     <td>{{ $item->sochuxe }}</td>
                                                     <td>{{ $item->chuxe }}</td>
                                                     <td>{{ $item->diachi }}</td>

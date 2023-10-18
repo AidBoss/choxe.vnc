@@ -46,7 +46,6 @@ class ProductsController extends Controller
             $request->category_id,
             $request->gia,
             $request->nhienlieu,
-            // $request->anh,
             $imageName,
             $request->mota,
             $request->kmdadi,

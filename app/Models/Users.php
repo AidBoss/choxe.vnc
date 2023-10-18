@@ -11,9 +11,34 @@ class Users extends Model
     use HasFactory;
     protected $table = 'users';
     // LẤY RA TẤT CẢ CÁC USER CÓ TRONG MẢNG
-    public function getAllUsers()
+    public function getAllUsers($filters=[],$search = 0,$sortArr = null)
     {
-        $users = DB::select('SELECT * FROM users ORDER BY created_at DESC');
+        $users =DB::table('users')
+        ->select('users.*');
+        // ->orderBy('created_at','DESC');
+
+        $orderBy = 'created_at';
+
+        $orderType = 'DESC';
+
+        if(!empty($sortArr) && is_array($sortArr)) {
+            if(!empty($sortArr['sortBy']) && !empty($sortArr['sortType'])) {
+                $orderBy = trim($sortArr['sortBy']);
+                $orderType = trim($sortArr['sortType']);
+            }
+        }
+        $users = $users->orderBy($orderBy,$orderType);
+        
+        if(!empty($filters)){
+            $users = $users->where($filters);
+        }
+        if(!empty($search)){
+            $users = $users->where(function($query) use($search){
+                $query->orWhere('name','like','%'.$search.'%');
+                $query->orWhere('email','like','%'.$search.'%');
+            });
+        }
+        $users = $users->get();
         return $users;
     }
     // GÁN THÊM MỚI DỮ LIỆU VÀO BẢNG

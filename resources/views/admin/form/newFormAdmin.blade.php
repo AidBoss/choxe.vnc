@@ -12,7 +12,7 @@
        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
 
        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
+       <link rel="stylesheet" href="{{ asset('font/css/style_admin.css') }}">
        <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css?v=3.2.0') }}">
        <script nonce="31c92abf-7479-48c6-ab24-d72e222b3fcd">
            (function(w, d) {

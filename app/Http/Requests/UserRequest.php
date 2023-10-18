@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
             'name' => 'required|min:5|max:255|unique:users',
             'phone' => 'required|numeric|digits:10',
             'email' => 'required|email',
-            'password' => 'required|min:6|max:255',
+            'password' => 'required|min:6',
         ];
     }
     public function messages(): array
@@ -36,8 +36,9 @@ class UserRequest extends FormRequest
             'email.required' => 'Email không được để trống ',
             'name.unique' => 'Tên tài khoản đã tồn tại!',
             'phone.required' => 'Số điện thoại không được để trống ',
+            'phone.digits' => 'Số điện thoại phải tối thiểu 10 số ',
             'password.required' => 'Mật khẩu không được để trống ',
-            'password.min' => 'Tên tài khoản phải lớn hơn :min',
+            'password.min' => 'Mật khẩu phải lớn hơn :min',
         ];
     }
 }

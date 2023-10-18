@@ -46,7 +46,7 @@
                                         <label for="name">Tên Tài Khoản</label>
                                         <input value="{{ old('name') }}" name='name' type="text"
                                             class="form-control" id="name">
-                                        @error('phone')
+                                        @error('name')
                                             <span class="error">{{ $errors->first('name') }}</span>
                                         @enderror
                                     </div>
