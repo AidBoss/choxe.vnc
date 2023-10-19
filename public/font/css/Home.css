@@ -361,7 +361,7 @@ option {
 }
 .new_content {
     width: 78%;
-    height: 100%;
+    height: auto;
     margin: auto;
 }
 .new_content h2 {

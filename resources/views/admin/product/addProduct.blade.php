@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputState">Năm sản xuất</label>
-                                            <input name="namsx" type="month" class="form-control" id="inputZip">
+                                            <input name="namsx" type="text" class="form-control" id="inputZip">
                                         </div>
                                     </div>
                                     <div class="form-row">

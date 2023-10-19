@@ -132,7 +132,7 @@
             </div>
             <div class="row">
                 <a target="_blank" href="danhsach2.php" id="next_page">
-                    <p>Xem Thêm <img src="{{ asset('font/img/chevrons-right_20_20.png') }} " alt=""></p>
+                    <a href="{{route('showdeleteProsucts')}}"><p>Xem Thêm <img src="{{ asset('font/img/chevrons-right_20_20.png') }} " alt=""></p></a>
                 </a>
             </div>
         </div>

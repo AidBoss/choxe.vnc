@@ -18,3 +18,17 @@
    object-fit: cover;
 
 }
+#cart_content_h h3{
+   color: #0b0217;
+}
+#cart_content_h:hover {
+   text-decoration: none;
+}
+#card_content_price{
+   font-size: 18px;
+   color: red;
+}
+#card_content_txt{
+   font-size: 0.9rem;
+   margin: 20px 0;
+}

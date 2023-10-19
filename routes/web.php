@@ -31,6 +31,9 @@ Route::prefix('Home')->group(function () {
     // function get data from form
     Route::post('/login', [LoginController::class, 'loginPost'])->name('loginPost');
     Route::post('/sign', [regiterController::class, 'regiterPost'])->name('regiterPost');
+
+    Route::get('/danhSach', [ProductsController::class,'showDetailProduct'])->name('showDetailProduct');
+
 });
 
 Route::prefix('admin')->middleware('adminCheck')->group(function () {

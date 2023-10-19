@@ -60,9 +60,7 @@ class ProductsController extends Controller
     {
         
         $imageName = time().'.'.$request->anh->extension();
-        // dd($imageName);
         $request->anh->move(public_path('/font/img-product'), $imageName);
-        // $test = $request->anh->move(public_path('anh'), $imageName);
         $dataInsert = [
             $request->ten,
             $request->category_id,
@@ -78,6 +76,7 @@ class ProductsController extends Controller
             $request->chuxe,
             $request->sochuxe,
             $request->diachi,
+            date('Y-m-d')
         ];
         // dd($dataInsert);
         $this->Products->addProducts($dataInsert);
@@ -149,5 +148,27 @@ class ProductsController extends Controller
             $msg = 'Liên kết không tồn tại';
         }
         return redirect()->route('showListProducts')->with('fail', $msg);
+    }
+
+    //HIỂN THỊ TRANG CHI TIẾT SẢN PHẨM 
+    public function showDetailProduct(Request $request){
+        $title = 'Danh sách sản phẩm';
+        $search ='';
+        //tìm kiếm bằng search
+        if(!empty($request->search)){
+            $search = $request->search;
+        }
+        // $filters =[];
+        // if(!empty($request->status)){
+        //     $status = $request->status;
+        //     if($status == "active"){
+        //         $status = 1;
+        //     }else{
+        //         $status =0;
+        //     }
+        //     $filters[] = ['users.status','=',$status];
+        // }   
+        $listProducts = $this->Products->getAllProducts($search);
+        return view('Home.detail_products', compact('title', 'listProducts'));
     }
 }

@@ -48,8 +48,8 @@ class Products extends Model
     public function addProducts($data)
     {
         return DB::insert('INSERT into products (ten,category_id,gia,nhienlieu,anh,mota,
-        kmdadi,hopso,xuatxu,namsx,socho,chuxe,sochuxe,diachi) 
-        values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $data);
+        kmdadi,hopso,xuatxu,namsx,socho,chuxe,sochuxe,diachi,created_at) 
+        values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $data);
     }
     // TÌM KIẾM THEO ID TRONG DATABASE
     public function getIdProducts($id)

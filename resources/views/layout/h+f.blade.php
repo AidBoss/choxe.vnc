@@ -5,7 +5,7 @@
     <div class="header">
         <div class="header_content">
             <div class="head_top">
-                <a href="../admin.html" alt="Chợ xe">
+                <a href="{{route('showHome')}}" alt="Chợ xe">
                     <img src="{{ asset('font/img/logo_white.png') }}" alt="" id="logo_header">
                 </a>
                 <a href="../Car-Audit.html">
