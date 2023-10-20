@@ -1,6 +1,5 @@
 @include('layout.script')
 
-<div class="box">
     <!-- Phần đầu trang web gồm logo và tìm kiếm -->
     <div class="header">
         <div class="header_content">
@@ -361,4 +360,3 @@
             </div>
         </div>
     </div>
-</div>

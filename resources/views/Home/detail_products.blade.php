@@ -40,12 +40,12 @@
     <form action="{{ route('showDetailProduct') }}" method="get">
         <div class="row">
             @if (!empty($listProducts))
-                @foreach ($listProducts as $key => $item)
-                    <div class="col-xs-3" style=" margin: 10px 5px ">
-                        <div class="card" style="width: 17rem;">
-                            <a target="_blank" id="cart_content_h" href="{{ route('showDetailhome',$item->id) }}">
-                                <img class="card-img-top" s src="{{ asset('font/img-product/'.$item->anh) }}" alt="anhxe"></a>
-                            <div class="card-body">
+            @foreach ($listProducts as $key => $item)
+            <div class="col-xs-3" style=" margin: 10px 5px ">
+                <div class="card" style="width: 17rem;">
+                    <a target="_blank" id="cart_content_h" href="{{ route('showDetailhome',['id' => $item->id]) }}">
+                        <img class="card-img-top" s src="{{ asset('font/img-product/'.$item->anh) }}" alt="anhxe"></a>
+                        <div class="card-body">
                                 <a target="_blank"  id="cart_content_h" href="#">   
                                     <h3 class="card-title">{{$item->ten}}</h3>
                                 </a>

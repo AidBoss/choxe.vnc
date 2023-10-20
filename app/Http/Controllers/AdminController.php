@@ -103,7 +103,6 @@ class AdminController extends Controller
         }
         return view('admin.form.editNewAdmin', compact('title', 'dataDetail'));
     }
-
     // CHỨC NĂNG SỬA TÀI KHOẢN ĐÃ LẤY 
 
     public function editUsersPost(UserRequest $request)

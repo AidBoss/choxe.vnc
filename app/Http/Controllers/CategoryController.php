@@ -18,7 +18,7 @@ class CategoryController extends Controller
         // GỌI HÀM CATEGORY
         $this->Category = new Category();
     }
-    //HIỂN THỊ TRANG CHI TIẾT SẢN PHẨM 
+    //HIỂN THỊ TRANG danh sach san pham 
     public function showDetailProduct(Request $request){
         $title = 'Danh sách sản phẩm';
         $search ='';
@@ -30,33 +30,22 @@ class CategoryController extends Controller
         $listProducts = $this->Products->getAllProducts($search, $allCategory,self::_PER_PAGE);
         return view('Home.detail_products', compact('title', 'listProducts','allCategory'));
     }
-    // public function showtdmn(Request $request){
-    //     $title = 'Danh sách sản phẩm';
-    //     $search ='';
-    //     //tìm kiếm bằng search
-    //     if(!empty($request->search)){
-    //         $search = $request->search;
-    //     }
-    //     $listProducts = $this->Products->getAllProducts();
-    //     return view('layout.tdmn', compact('title', 'listProducts'));
-    // }
-    // public function showDetailhome(){
-    //     return view('Home.chitietsanpham');
-    // }
-    public function showDetailhome(Request $request, $id = 0)
+    //HIỂN THỊ TRANG chi tiet san pham
+    public function showDetailhome(Request $request, $id = null)
     {
         if (!empty($id)) {
+            $title = 'Chi tiết sản phẩm';
+            $dataDetail = $this->Products->getIdProducts($id);
             $allCategory = $this->Category->getAllCategory();
-            $title = 'Cập nhập người dùng';
             if (!empty($dataDetail[0])) {
-                $dataDetail = $this->Products->getIdProducts($id);
+                $request->session()->put('id', $id);
                 $dataDetail = $dataDetail[0];
             } else {
-                return redirect()->route('showHome')->with('fail', 'Người dùng này không tồn tại!');
+                return back()->with('fail', 'sản phẩm này bị lỗi');
             }
         } else {
-            return redirect()->route('showLogin')->with('fail', 'Liên kết không tồn tại');
+            return back()->with('fail', 'Liên kết không tồn tại');
         }
-        return view('Home.chitietsanpham', compact('title', 'dataDetail'));
+        return view('Home.chitietsanpham', compact('title', 'allCategory','dataDetail'));
     }
 }

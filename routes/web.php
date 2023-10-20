@@ -35,7 +35,7 @@ Route::prefix('Home')->group(function () {
     // show hiển thị trang danh sách sản phẩm
     Route::get('/danhSach', [CategoryController::class,'showDetailProduct'])->name('showDetailProduct');
     
-    Route::get('/san pham', [CategoryController::class,'showDetailhome'])->name('showDetailhome');
+    Route::get('/san_pham/{id}', [CategoryController::class,'showDetailhome'])->name('showDetailhome');
 
 });
 
