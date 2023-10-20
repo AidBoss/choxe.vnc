@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2023 at 10:12 PM
+-- Generation Time: Oct 20, 2023 at 09:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -158,7 +158,8 @@ INSERT INTO `products` (`id`, `ten`, `category_id`, `gia`, `nhienlieu`, `anh`, `
 (18, 'BMW 3 Series 325i 2004', 1, '245 Triệu', 'Xăng', '1697738852.jpg', 'Xe xử dụng đi làm hàng ngày, chủ xe tính cẩn thận, bảo quản tốt.', '100600', 'tự động', 'Nhập khẩu', '2004', '4', 'Chị Phương', '0919647970', 'Hà Nội', '2023-10-18 17:00:00', NULL),
 (19, 'Audi A4', 3, '650 Triệu', 'Xăng', '1697738986.jpg', 'Chính chủ tại Hà Nội cần bán xe Audi A4 2010, - Nhập khẩu nguyên chiếc từ Đức năm 2010 - Máy 1.8 TFSI - Số KM: 6 vạn km - Xe đi rất cẩn thận, bảo quản gara trong nhà - Giá bán: 650tr', '600000', 'Bán Tự Động', 'Nhập khẩu', '2010', '4', 'Nguyen Thi Oanh', '0913846482', 'Hà Nội', '2023-10-18 17:00:00', NULL),
 (20, 'Toyota Camry 2.4', 4, '445 Triệu', 'Xăng', '1697739056.jpg', 'Chính chủ bán xe Camry 2011 số tự động 2.4 Xe đang sử dụng ko có nhu cầu sửa dụng nên bán.xe đẹp bao test hãng + Hãng: Toyota + Dòng xe: Camry + Năm sản xuất: 2011 + Số Km đã đi: 870000 + Tình trạng: Đã sử dụng + Hộp số: Tự động + Nhiên liệu: Xăng - Địa chỉ : Phường Tân Chánh Hiệp, Quận 12, Tp Hồ Chí Minh - Giá bán : 445.000.000 đ - Liên hệ : 0986706147', '870000', 'tự động', 'Nhập khẩu', '4', '4', 'Anh', '0387372779', 'Hồ Chí Minh', '2023-10-18 17:00:00', NULL),
-(21, 'Nissan Navara PRO4X', 9, '210 Triệu', 'Dầu', '1697744062.jpg', 'Giảm phí trước bạ + tặng phụ kiện chính hãng ____________________ Hỗ trợ trả góp lên đến 80% giá trị xe Hỗ trợ đăng kí lái thử Đủ màu giao ngay _______________________ Liên hệ: 0941 421 408 Địa chỉ: 202- 204 Nguyễn Lương Bằng, Quận 7, TP.HCM', '0', 'tự động', 'Nhập khẩu', '2022', '4', 'NISSAN PHÚ MỸ', '0941738408', 'Hồ Chí Minh', '2023-10-18 17:00:00', NULL);
+(21, 'Nissan Navara PRO4X', 9, '210 Triệu', 'Dầu', '1697744062.jpg', 'Giảm phí trước bạ + tặng phụ kiện chính hãng ____________________ Hỗ trợ trả góp lên đến 80% giá trị xe Hỗ trợ đăng kí lái thử Đủ màu giao ngay _______________________ Liên hệ: 0941 421 408 Địa chỉ: 202- 204 Nguyễn Lương Bằng, Quận 7, TP.HCM', '0', 'tự động', 'Nhập khẩu', '2022', '4', 'NISSAN PHÚ MỸ', '0941738408', 'Hồ Chí Minh', '2023-10-18 17:00:00', NULL),
+(23, 'Ford Ranger Ford Ranger XLS 2.0L 4x2 AT', 5, '645 Triệu', 'Xăng', '1697809741.jpg', 'Siêu Lướt 6000km FORD RANGER XLS AT 2.0L 4x2 (Số tự động 1 cầu) - Ngoại hình mới hầm hố đậm chất Mỹ, thiết kế cụm đèn chữ C kiểu F150 - Nội thất rộng rãi 5 chỗ ngồi - Động cơ Diesel 2.0L mới 170 mã lực - Số tự động 6 cấp mới - Tay lái trợ lực điện - Rất tiếp kiệm dầu - An toàn ABS, EDB, kiểm soát lật xe+trọng tải, Cruise - Lim Control, khởi hành ngang dốc - 6 túi khí - Hệ thống Sync 4A, màn hình cảm ứng 10\". Kết nối Carplay, Androi Auto - Màn hình công tơ mét 8\"', '6000', 'tự động', NULL, '2023', '4', 'Bạch Hiếu', '0562535525', 'Hà Nội', '2023-10-19 17:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -186,11 +187,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `phone`, `image`, `level`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ankdev', 'HarrveyDev@gmail.com', NULL, '$2y$10$Wi8VKwPV1inZXtKqtcyYFeE4oIc.2GVfkOnGOVXko0Slm74y3F7Qi', '0393866527', NULL, 1, 1, 'uUmravZqVIy1MglMWvgohfPfHuWH8IP0BOM13Tt7IR2pGn4B6Xi4MqAqusNc', '2023-10-16 13:16:49', '2023-10-16 13:16:49'),
+(1, 'Ankdev', 'HarrveyDev@gmail.com', NULL, '$2y$10$Wi8VKwPV1inZXtKqtcyYFeE4oIc.2GVfkOnGOVXko0Slm74y3F7Qi', '0393866527', NULL, 1, 1, 'p0gAj9JHtXltkvJDeje0CcCAqZT1deuPfnSqMAVlpL0Bq4wjVjdEG7u4Ef8H', '2023-10-16 13:16:49', '2023-10-16 13:16:49'),
 (4, 'Huy23', 'Huy@gmail.com', NULL, '$2y$10$M9mR/Jq.t/ATzqFVFtqtz.eAXlmmicwRKlTTUO4/MvXV0KrDKm2fa', '0286943538', NULL, 0, 0, NULL, '2023-10-17 12:28:31', NULL),
 (5, 'Tuan03', 'Tuan03@gmail.com', NULL, '$2y$10$ubTIkOm4lvcxxkB.u2aIYOHcWOhVnTwGj4wm5oRITnQzQ2y3FAXDa', '0637892234', NULL, 0, 0, NULL, '2023-10-17 12:30:19', NULL),
-(6, 'thuytrang22', 'thuytrang22@gmail.com', NULL, '$2y$10$DE2X8yctAStIs8qR954ZfuAITvyyn38NUgI/RFiaA.yPQLIq5JXGS', '0348947682', '1697648577.jpg', 0, 1, NULL, '2023-10-17 12:36:16', '2023-10-18 10:02:57'),
-(7, 'ngocmai', 'ngocmai@gmail.com', NULL, '$2y$10$2LSozjZydV72omrcqUbw1.GoxVTaRHtXXfAvTOv.7BtpG/aJz9X4C', '0352834627', NULL, 1, 0, NULL, '2023-10-17 12:37:37', NULL);
+(6, 'thuytrang', 'thuytrang22@gmail.com', NULL, '$2y$10$DE2X8yctAStIs8qR954ZfuAITvyyn38NUgI/RFiaA.yPQLIq5JXGS', '0348947682', '1697648577.jpg', 0, 1, 'fGiJERplauYshy70bS2n8FwdiQ6ImE7F7pGMNRVm2qV8QPhzyyjEWj2Z9sRQ', '2023-10-17 12:36:16', '2023-10-18 10:02:57'),
+(7, 'ngocmai', 'ngocmai@gmail.com', NULL, '$2y$10$2LSozjZydV72omrcqUbw1.GoxVTaRHtXXfAvTOv.7BtpG/aJz9X4C', '0352834627', NULL, 1, 0, 'xueibGadCIlqdFwVCRzBZ1vXakz55o6wpCwcqv4FQ84QGePCwOfFMt71oWEd', '2023-10-17 12:37:37', NULL);
 
 --
 -- Indexes for dumped tables
@@ -275,7 +276,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`
