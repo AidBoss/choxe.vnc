@@ -1,6 +1,6 @@
 @extends('admin.form.newFormAdmin')
 @section('title')
-    {{ $title }}
+    {{-- {{ $title }} <a href="{{ route('editUsers', ['id' => $item->id]) }}"> --}}
 @endsection
 @section('body_new')
     <div class="content-wrapper">
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h4 class="m-0">DANH SÁCH NGƯỜI DÙNG</h4>
+                        <h4 class="m-0">DANH SÁCH SẢN PHẨM</h4>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -89,6 +89,9 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                        <div class="page_select">
+                            {{$listProducts->links()}}
                         </div>
                     </div>
                 </div>

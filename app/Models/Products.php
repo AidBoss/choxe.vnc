@@ -11,7 +11,7 @@ class Products extends Model
     use HasFactory;
     protected $table = 'products';
     //LẤY DANH SÁCH SẢN PHẨM
-    public function getAllProducts($search = 0,$sortArr = null)
+    public function getAllProducts($search = 0,$sortArr = null,$perPage = null)
     {
         $products =DB::table('products')
         ->select('products.*','category.hang')
@@ -41,8 +41,12 @@ class Products extends Model
             });
         }
         
-        $products = $products->get();
-        return $products; 
+        // PHÂN TRANG
+        if(!empty($perPage)){
+            return  $products = $products->paginate($perPage);
+        }else{
+            return  $products = $products->get();
+        }// return $products; 
     }
     //THÊM MỚI SẢN PHẨM
     public function addProducts($data)

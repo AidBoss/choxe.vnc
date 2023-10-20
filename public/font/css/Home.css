@@ -269,8 +269,7 @@ option {
 }
 
 .buttom_login {
-    margin-left: 0px;
-    width: 40%;
+    width: 20%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -280,11 +279,11 @@ option {
 }
 .but {
     text-align: center;
-    width: 190px;
+    width: 170px;
 }
 .but2 {
     height: 75%;
-    width: 180px;
+    width: 170px;
     border: 1px solid #fff;
     text-align: center;
     line-height: 3;

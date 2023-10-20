@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\regiterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
 
 /*
@@ -31,8 +32,10 @@ Route::prefix('Home')->group(function () {
     // function get data from form
     Route::post('/login', [LoginController::class, 'loginPost'])->name('loginPost');
     Route::post('/sign', [regiterController::class, 'regiterPost'])->name('regiterPost');
-
-    Route::get('/danhSach', [ProductsController::class,'showDetailProduct'])->name('showDetailProduct');
+    // show hiển thị trang danh sách sản phẩm
+    Route::get('/danhSach', [CategoryController::class,'showDetailProduct'])->name('showDetailProduct');
+    
+    Route::get('/san pham', [CategoryController::class,'showDetailhome'])->name('showDetailhome');
 
 });
 

@@ -11,11 +11,10 @@ class Users extends Model
     use HasFactory;
     protected $table = 'users';
     // LẤY RA TẤT CẢ CÁC USER CÓ TRONG MẢNG
-    public function getAllUsers($filters=[],$search = 0,$sortArr = null)
+    public function getAllUsers($filters=[],$search = 0,$sortArr = null,$perPage =null)
     {
         $users =DB::table('users')
         ->select('users.*');
-        // ->orderBy('created_at','DESC');
 
         $orderBy = 'created_at';
 
@@ -38,7 +37,12 @@ class Users extends Model
                 $query->orWhere('email','like','%'.$search.'%');
             });
         }
-        $users = $users->get();
+        // PHÂN TRANG
+        if(!empty($perPage)){
+            $users = $users->paginate($perPage);
+        }else{
+            $users = $users->get();
+        }
         return $users;
     }
     // GÁN THÊM MỚI DỮ LIỆU VÀO BẢNG

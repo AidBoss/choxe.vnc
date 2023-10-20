@@ -80,61 +80,6 @@
                                                             <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu
                                                             <option value="Bắc Giang">Bắc Giang
                                                             <option value="Bắc Kạn">Bắc Kạn
-                                                            <option value="Bạc Liêu">Bạc Liêu
-                                                            <option value="Bắc Ninh">Bắc Ninh
-                                                            <option value="Bến Tre">Bến Tre
-                                                            <option value="Bình Định">Bình Định
-                                                            <option value="Bình Dương">Bình Dương
-                                                            <option value="Bình Phước">Bình Phước
-                                                            <option value="Bình Thuận">Bình Thuận
-                                                            <option value="Bình Thuận">Bình Thuận
-                                                            <option value="Cà Mau">Cà Mau
-                                                            <option value="Cao Bằng">Cao Bằng
-                                                            <option value="Đắk Lắk">Đắk Lắk
-                                                            <option value="Đắk Nông">Đắk Nông
-                                                            <option value="Điện Biên">Điện Biên
-                                                            <option value="Đồng Nai">Đồng Nai
-                                                            <option value="Đồng Tháp">Đồng Tháp
-                                                            <option value="Đồng Tháp">Đồng Tháp
-                                                            <option value="Gia Lai">Gia Lai
-                                                            <option value="Hà Giang">Hà Giang
-                                                            <option value="Hà Nam">Hà Nam
-                                                            <option value="Hà Tĩnh">Hà Tĩnh
-                                                            <option value="Hải Dương">Hải Dương
-                                                            <option value="Hậu Giang">Hậu Giang
-                                                            <option value="Hòa Bình">Hòa Bình
-                                                            <option value="Hưng Yên">Hưng Yên
-                                                            <option value="Khánh Hòa">Khánh Hòa
-                                                            <option value="Kiên Giang">Kiên Giang
-                                                            <option value="Kon Tum">Kon Tum
-                                                            <option value="Lai Châu">Lai Châu
-                                                            <option value="Lâm Đồng">Lâm Đồng
-                                                            <option value="Lạng Sơn">Lạng Sơn
-                                                            <option value="Lào Cai">Lào Cai
-                                                            <option value="Long An">Long An
-                                                            <option value="Nam Định">Nam Định
-                                                            <option value="Nghệ An">Nghệ An
-                                                            <option value="Ninh Bình">Ninh Bình
-                                                            <option value="Ninh Thuận">Ninh Thuận
-                                                            <option value="Phú Thọ">Phú Thọ
-                                                            <option value="Quảng Bình">Quảng Bình
-                                                            <option value="Quảng Bình">Quảng Bình
-                                                            <option value="Quảng Ngãi">Quảng Ngãi
-                                                            <option value="Quảng Ninh">Quảng Ninh
-                                                            <option value="Quảng Trị">Quảng Trị
-                                                            <option value="Sóc Trăng">Sóc Trăng
-                                                            <option value="Sơn La">Sơn La
-                                                            <option value="Tây Ninh">Tây Ninh
-                                                            <option value="Thái Bình">Thái Bình
-                                                            <option value="Thái Nguyên">Thái Nguyên
-                                                            <option value="Thanh Hóa">Thanh Hóa
-                                                            <option value="Thừa Thiên Huế">Thừa Thiên Huế
-                                                            <option value="Tiền Giang">Tiền Giang
-                                                            <option value="Trà Vinh">Trà Vinh
-                                                            <option value="Tuyên Quang">Tuyên Quang
-                                                            <option value="Vĩnh Long">Vĩnh Long
-                                                            <option value="Vĩnh Phúc">Vĩnh Phúc
-                                                            <option value="Yên Bái">Yên Bái
                                                             <option value="Phú Yên">Phú Yên
                                                             <option value="Tp.Cần Thơ">Tp.Cần Thơ
                                                             <option value="Tp.Đà Nẵng">Tp.Đà Nẵng
@@ -199,12 +144,12 @@
                                                             </li>
                                                             <li>
                                                                 <span><img src="img/Hyndy.png" alt=""
-                                                                        style="width:24px; height:24px;"></img></span>
+                                                                        style="width:24px; height:24px;"></span>
                                                                 <span>Hyundai</span>
                                                             </li>
                                                             <li>
                                                                 <span><img src="img/Kia.png" alt=""
-                                                                        style="width:24px; height:24px;"></img></span>
+                                                                        style="width:24px; height:24px;"></span>
                                                                 <span>KIA</span>
                                                             </li>
                                                             <li>
@@ -214,7 +159,7 @@
                                                             </li>
                                                             <li>
                                                                 <span><img src="img/mitsubishi.png" alt=""
-                                                                        style="width:24px; height:24px;"></img></span>
+                                                                        style="width:24px; height:24px;"></span>
                                                                 <span>Misubishi</span>
                                                             </li>
                                                         </ul>
@@ -342,19 +287,25 @@
                     </div>
                 </form>
                 <div class="buttom_login">
-                    <div class="but">
+                    @if (Auth::check())
+                        <div class="but_avata">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                        <a href="{{route('userIndex')}}"><img id="img-avata" class="rounded-circle mb-3" src="{{ asset('font/img-avata/'.Auth::user()->image) }}" alt=""></a>
+                        </div>
+                    @else
+                        <div class="but">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                             data-target="#modelId" style="background-color: #f05626;border: none;font-size: 16px;">
-                            <a href="{{ url('Home/login') }}"><i class="fa-regular fa-user"
-                                    id="login_header"></i>Đăng
-                                Nhập</a>
-                        </button>
-                        <!-- Modal -->
-                    </div>
+                                <a href="{{ url('Home/login') }}"><i class="fa-regular fa-user"
+                                        id="login_header"></i>Đăng
+                                    Nhập</a>
+                            </button>
+                        </div>
+                    @endif  
+                </div>
                     <div class="but2">
-                        <a href="{{ url('Home/login') }}" id="dangtin">
-                            Đăng Tin <img src="img/add_listing_white_16_18.png" alt=""
+                        <a href="{{ url('Home/login') }}" style="text-decoration: none">
+                            <p id="dangtin" style="line-height: 3;">Đăng Tin </p><img src="img/add_listing_white_16_18.png" alt=""
                                 id="login_dangtin"></i>
                         </a>
                     </div>

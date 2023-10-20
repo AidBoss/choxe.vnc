@@ -32,3 +32,16 @@
    font-size: 0.9rem;
    margin: 20px 0;
 }
+.page_select{
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+   /* margin: 10px auto; */
+   width: auto;
+   height: auto;
+}
+.but_avata{
+      text-align: center;
+      height: 50px;
+      width: 50px;
+}

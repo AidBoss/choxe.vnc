@@ -6,12 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Products;
 use  App\Http\Requests\ProductRequest;
 use App\Models\Category;
-// use Illuminate\Support\Facades\DB;
-// use Illuminate\Http\UploadedFile;
 class ProductsController extends Controller
 {
     private $Products;
     private $Category;
+    const _PER_PAGE = 4;
     public function __construct()
     {
         // GỌI HÀM Products
@@ -23,8 +22,8 @@ class ProductsController extends Controller
     public function showListProducts(Request $request)
     {
         $title = 'Danh sách sản phẩm';
-        $search ='';
         //tìm kiếm bằng search
+        $search ='';
         if(!empty($request->search)){
             $search = $request->search;
         }
@@ -45,7 +44,7 @@ class ProductsController extends Controller
             'sortBy'=> $sortBy,
             'sortType'=> $sortType,
         ];
-        $listProducts = $this->Products->getAllProducts($search,$sortArr);
+        $listProducts = $this->Products->getAllProducts($search,$sortArr,self::_PER_PAGE);
         return view('admin.product.listProduct', compact('title', 'listProducts','sortType'));
     }
     //HIỂN THỊ THÊM MỚI SẢN PHẨM
@@ -78,7 +77,6 @@ class ProductsController extends Controller
             $request->diachi,
             date('Y-m-d')
         ];
-        // dd($dataInsert);
         $this->Products->addProducts($dataInsert);
         return redirect()->route('showAddProducts')->with('success', 'Thêm mới Sản Phẩm thành công');
     }
@@ -86,7 +84,7 @@ class ProductsController extends Controller
     public function editProducts(Request $request, $id = 0)
     {
         $allCategory = $this->Category->getAllCategory();
-        $title = 'Cập nhập người dùng';
+        $title = 'Cập nhập sản phẩm';
         if (!empty($id)) {
             $dataDetail = $this->Products->getIdProducts($id);
             if (!empty($dataDetail[0])) {
@@ -149,26 +147,5 @@ class ProductsController extends Controller
         }
         return redirect()->route('showListProducts')->with('fail', $msg);
     }
-
-    //HIỂN THỊ TRANG CHI TIẾT SẢN PHẨM 
-    public function showDetailProduct(Request $request){
-        $title = 'Danh sách sản phẩm';
-        $search ='';
-        //tìm kiếm bằng search
-        if(!empty($request->search)){
-            $search = $request->search;
-        }
-        // $filters =[];
-        // if(!empty($request->status)){
-        //     $status = $request->status;
-        //     if($status == "active"){
-        //         $status = 1;
-        //     }else{
-        //         $status =0;
-        //     }
-        //     $filters[] = ['users.status','=',$status];
-        // }   
-        $listProducts = $this->Products->getAllProducts($search);
-        return view('Home.detail_products', compact('title', 'listProducts'));
-    }
+    
 }

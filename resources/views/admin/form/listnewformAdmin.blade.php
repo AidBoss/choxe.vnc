@@ -105,6 +105,9 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div class="page_select">
+                                {{$usersList->links()}}
+                            </div>
                         </div>
                     </div>
 

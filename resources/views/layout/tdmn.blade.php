@@ -4,7 +4,7 @@
             <h2>Tin Đăng mới nhất</h2>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="card" id="txt_logo" style="width: 18rem;">
+                    <div class="card" id="txt_logo" style="width: 16rem;">
                         <a target="_blank" href="../trangchitiet/ctOto1.php"><img class="card-img-top"
                                 src="{{ asset('font/img/oto1.jpg') }} " alt="Card image cap"></a>
                         <div class="card-body">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <a target="_blank" id="tx_link" href="../trangchitiet/ctOto2.php"><img class="card-img-top"
                                 src="{{ asset('font/img/oto2.jpg') }} " alt="Card image cap"></a>
                         <div class="card-body">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <a target="_blank" id="tx_link" href="../trangchitiet/ctOto3.php"><img class="card-img-top"
                                 src="{{ asset('font/img/oto3.jpg') }} " alt="Card image cap"></a>
                         <div class="card-body">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <a target="_blank" id="tx_link" href="../trangchitiet/ctOto4.php"><img class="card-img-top"
                                 src="{{ asset('font/img/oto4.jpg') }} " alt="Card image cap"></a>
                         <div class="card-body">
@@ -68,7 +68,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <a target="_blank" id="tx_link" href="../trangchitiet/ctOto5.php"><img class="card-img-top"
                                 src="{{ asset('font/img/oto5.jpg') }} " alt="Card image cap"></a>
                         <div class="card-body">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <a target="_blank" id="tx_link" href="../trangchitiet/ctOto6.php"><img
                                 class="card-img-top" src="{{ asset('font/img/oto6.jpg') }}" alt="Card image cap"></a>
                         <div class="card-body">
@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <a target="_blank" id="tx_link" href="../trangchitiet/ctOto7.php"><img
                                 class="card-img-top" src="{{ asset('font/img/oto7.jpg') }} "
                                 alt="Card image cap"></a>
@@ -115,7 +115,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <a target="_blank" id="tx_link" href="../trangchitiet/ctOto8.php"><img
                                 class="card-img-top" src="{{ asset('font/img/oto8.jpg') }} "
                                 alt="Card image cap"></a>
@@ -131,9 +131,7 @@
                 </div>
             </div>
             <div class="row">
-                <a target="_blank" href="danhsach2.php" id="next_page">
-                    <a href="{{route('showdeleteProsucts')}}"><p>Xem Thêm <img src="{{ asset('font/img/chevrons-right_20_20.png') }} " alt=""></p></a>
-                </a>
+                    <a href="{{route('showDetailProduct')}}" id="next_page"><p>Xem Thêm<img src="{{ asset('font/img/chevrons-right_20_20.png') }} " alt=""></p></a>
             </div>
         </div>
     </div>

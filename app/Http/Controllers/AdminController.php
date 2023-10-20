@@ -10,6 +10,7 @@ use App\Http\Requests\UserRequest;
 class AdminController extends Controller
 {
     private $users;
+    const _PER_PAGE = 4;
     public function __construct()
     {
         $this->users = new Users();
@@ -61,7 +62,7 @@ class AdminController extends Controller
             'sortBy'=> $sortBy,
             'sortType'=> $sortType,
         ];
-        $usersList = $this->users->getAllUsers($filters,$search,$sortArr);
+        $usersList = $this->users->getAllUsers($filters,$search,$sortArr,self::_PER_PAGE);
         return view('admin.form.listnewformAdmin', compact('title', 'usersList','sortType'));
     }
 
